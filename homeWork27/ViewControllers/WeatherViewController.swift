@@ -66,7 +66,8 @@ class WeatherViewController: UIViewController {
     }
     
     func getWeatherByCoordinates(city: Geocoding) {
-        apiProvider.getWeatherForCityCoordinates(lat: city.lat, lon: city.lon) { result in
+        apiProvider.getWeatherForCityCoordinates(lat: city.lat, lon: city.lon) { [weak self]  result in
+            guard let self = self else {return}
             switch result {
             case .success(let value):
                 guard let weatherIconId = value.current?.weather?.first?.icon else {return}
@@ -87,9 +88,9 @@ class WeatherViewController: UIViewController {
                     self.feelsLikeLabel.text = "ощущается как +\(Int(feelsLikeTemp))"
                     
                     guard let descriptionWeather = value.current?.weather?.first?.description else {return}
-                    self.discriptionLabel.text = "\(descriptionWeather)"
+                    self.discriptionLabel.text = descriptionWeather
                     
-                    guard let imageUrl = URL(string: "https://openweathermap.org/img/wn/\(weatherIconId)@2x.png") else {return}
+                    guard let imageUrl = URL(string: "\(Constants.imageURL)\(weatherIconId)@2x.png") else {return}
                     if let data = try? Data(contentsOf: imageUrl) {
                         self.weatherImage.image = UIImage(data: data)
                         
@@ -120,7 +121,7 @@ extension WeatherViewController: UICollectionViewDelegate, UICollectionViewDataS
             
             if let hourlyTemp = hourlyWeatherArray[indexPath.row].temp,
                let hourlyIconId = hourlyWeatherArray[indexPath.row].weather?.first?.icon,
-               let imageUrl = URL(string: "https://openweathermap.org/img/wn/\(hourlyIconId)@2x.png"),
+               let imageUrl = URL(string: "\(Constants.imageURL)\(hourlyIconId)@2x.png"),
                let data = try? Data(contentsOf: imageUrl) {
                 
                 collectionCell.hourlyWeatherLabel.text = "+\(Int(hourlyTemp))"
