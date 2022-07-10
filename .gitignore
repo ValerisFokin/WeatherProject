@@ -89,6 +89,7 @@ fastlane/test_output
 
 iOSInjectionProject/
 .DS_Store
-Podfile
-Podfile.lock
+
+
 Pods
+WeatherProject

@@ -21,12 +21,19 @@
 		7F0A3B9A286B5E4400FD6EDC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A3B99286B5E4400FD6EDC /* Constants.swift */; };
 		7F0A3B9C286B5E8400FD6EDC /* AlamofireProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A3B9B286B5E8400FD6EDC /* AlamofireProvider.swift */; };
 		7F0A3BA3286B64A500FD6EDC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A3BA2286B64A500FD6EDC /* MapViewController.swift */; };
-		7F0A3BA7286C7F5800FD6EDC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7F0A3BA6286C7F5800FD6EDC /* Alamofire */; };
 		7F0A3BAF286C887300FD6EDC /* DailyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A3BAD286C887300FD6EDC /* DailyWeatherCell.swift */; };
 		7F0A3BB0286C887300FD6EDC /* DailyWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0A3BAE286C887300FD6EDC /* DailyWeatherCell.xib */; };
 		7F0A3BB4286C88C400FD6EDC /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A3BB2286C88C400FD6EDC /* HourlyWeatherCell.swift */; };
 		7F0A3BB5286C88C400FD6EDC /* HourlyWeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0A3BB3286C88C400FD6EDC /* HourlyWeatherCell.xib */; };
 		7F0A3BF528709C9E00FD6EDC /* MapStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F0A3BF428709C9E00FD6EDC /* MapStoryboard.storyboard */; };
+		7F2B5A2E287B4660001BBA2D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2B5A2D287B4660001BBA2D /* Realm */; };
+		7F2B5A30287B4660001BBA2D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2B5A2F287B4660001BBA2D /* RealmSwift */; };
+		7F2B5A33287B478B001BBA2D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2B5A32287B478B001BBA2D /* Alamofire */; };
+		7F8E506C287B38EB00FC33FC /* RealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E506B287B38EB00FC33FC /* RealmViewController.swift */; };
+		7F8E506E287B393800FC33FC /* RealmStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8E506D287B393800FC33FC /* RealmStoryboard.storyboard */; };
+		7F8E5071287B39AE00FC33FC /* RealmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E506F287B39AE00FC33FC /* RealmTableViewCell.swift */; };
+		7F8E5072287B39AE00FC33FC /* RealmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8E5070287B39AE00FC33FC /* RealmTableViewCell.xib */; };
+		7F8E5075287B3A4C00FC33FC /* RealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E5074287B3A4C00FC33FC /* RealmData.swift */; };
 		E316B76AD05411CDE9C771B4 /* Pods_homeWork27.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A858877ACC0D0FC84D3C2824 /* Pods_homeWork27.framework */; };
 		ED92BEE663E5A30C712A3D47 /* Pods_homeWork27_homeWork27UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0529E446BAEEBF50F7B9F4D /* Pods_homeWork27_homeWork27UITests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +82,11 @@
 		7F0A3BB3286C88C400FD6EDC /* HourlyWeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyWeatherCell.xib; sourceTree = "<group>"; };
 		7F0A3BF428709C9E00FD6EDC /* MapStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryboard.storyboard; sourceTree = "<group>"; };
 		7F0A3BF628722E9800FD6EDC /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		7F8E506B287B38EB00FC33FC /* RealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmViewController.swift; sourceTree = "<group>"; };
+		7F8E506D287B393800FC33FC /* RealmStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RealmStoryboard.storyboard; sourceTree = "<group>"; };
+		7F8E506F287B39AE00FC33FC /* RealmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTableViewCell.swift; sourceTree = "<group>"; };
+		7F8E5070287B39AE00FC33FC /* RealmTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealmTableViewCell.xib; sourceTree = "<group>"; };
+		7F8E5074287B3A4C00FC33FC /* RealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmData.swift; sourceTree = "<group>"; };
 		8455D3D49A772177C0DC6A17 /* Pods-homeWork27.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeWork27.release.xcconfig"; path = "Target Support Files/Pods-homeWork27/Pods-homeWork27.release.xcconfig"; sourceTree = "<group>"; };
 		867174F12F634EFB66A3E587 /* Pods_homeWork27Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homeWork27Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0529E446BAEEBF50F7B9F4D /* Pods_homeWork27_homeWork27UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homeWork27_homeWork27UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +100,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F0A3BA7286C7F5800FD6EDC /* Alamofire in Frameworks */,
+				7F2B5A30287B4660001BBA2D /* RealmSwift in Frameworks */,
+				7F2B5A33287B478B001BBA2D /* Alamofire in Frameworks */,
+				7F2B5A2E287B4660001BBA2D /* Realm in Frameworks */,
 				E316B76AD05411CDE9C771B4 /* Pods_homeWork27.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,7 +162,9 @@
 			children = (
 				7F0A3B60286B13A000FD6EDC /* AppDelegate.swift */,
 				7F0A3B62286B13A000FD6EDC /* SceneDelegate.swift */,
+				7F8E5074287B3A4C00FC33FC /* RealmData.swift */,
 				7F0A3B99286B5E4400FD6EDC /* Constants.swift */,
+				7F8E5073287B39B600FC33FC /* RealmWeatherCell */,
 				7F0A3BB6286C88CE00FD6EDC /* HourlyWeatherCollection */,
 				7F0A3BB1286C887F00FD6EDC /* DailyWeatherTable */,
 				7F0A3B9E286B60D400FD6EDC /* Services */,
@@ -186,6 +202,7 @@
 			children = (
 				7F0A3B64286B13A000FD6EDC /* WeatherViewController.swift */,
 				7F0A3BA2286B64A500FD6EDC /* MapViewController.swift */,
+				7F8E506B287B38EB00FC33FC /* RealmViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -195,6 +212,7 @@
 			children = (
 				7F0A3B66286B13A000FD6EDC /* Main.storyboard */,
 				7F0A3BF428709C9E00FD6EDC /* MapStoryboard.storyboard */,
+				7F8E506D287B393800FC33FC /* RealmStoryboard.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -215,6 +233,15 @@
 				7F0A3BB3286C88C400FD6EDC /* HourlyWeatherCell.xib */,
 			);
 			path = HourlyWeatherCollection;
+			sourceTree = "<group>";
+		};
+		7F8E5073287B39B600FC33FC /* RealmWeatherCell */ = {
+			isa = PBXGroup;
+			children = (
+				7F8E506F287B39AE00FC33FC /* RealmTableViewCell.swift */,
+				7F8E5070287B39AE00FC33FC /* RealmTableViewCell.xib */,
+			);
+			path = RealmWeatherCell;
 			sourceTree = "<group>";
 		};
 		C33E0DBF329DF7428E8A934D /* Pods */ = {
@@ -249,7 +276,9 @@
 			);
 			name = homeWork27;
 			packageProductDependencies = (
-				7F0A3BA6286C7F5800FD6EDC /* Alamofire */,
+				7F2B5A2D287B4660001BBA2D /* Realm */,
+				7F2B5A2F287B4660001BBA2D /* RealmSwift */,
+				7F2B5A32287B478B001BBA2D /* Alamofire */,
 			);
 			productName = homeWork27;
 			productReference = 7F0A3B5D286B13A000FD6EDC /* homeWork27.app */;
@@ -327,7 +356,8 @@
 			);
 			mainGroup = 7F0A3B54286B13A000FD6EDC;
 			packageReferences = (
-				7F0A3BA5286C7F5700FD6EDC /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7F2B5A2C287B4660001BBA2D /* XCRemoteSwiftPackageReference "realm-swift" */,
+				7F2B5A31287B478B001BBA2D /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 7F0A3B5E286B13A000FD6EDC /* Products */;
 			projectDirPath = "";
@@ -348,6 +378,8 @@
 				7F0A3BF528709C9E00FD6EDC /* MapStoryboard.storyboard in Resources */,
 				7F0A3BB0286C887300FD6EDC /* DailyWeatherCell.xib in Resources */,
 				7F0A3BB5286C88C400FD6EDC /* HourlyWeatherCell.xib in Resources */,
+				7F8E5072287B39AE00FC33FC /* RealmTableViewCell.xib in Resources */,
+				7F8E506E287B393800FC33FC /* RealmStoryboard.storyboard in Resources */,
 				7F0A3B6D286B13A200FD6EDC /* LaunchScreen.storyboard in Resources */,
 				7F0A3B6A286B13A200FD6EDC /* Assets.xcassets in Resources */,
 				7F0A3B68286B13A000FD6EDC /* Main.storyboard in Resources */,
@@ -481,9 +513,12 @@
 				7F0A3B65286B13A000FD6EDC /* WeatherViewController.swift in Sources */,
 				7F0A3BB4286C88C400FD6EDC /* HourlyWeatherCell.swift in Sources */,
 				7F0A3B9C286B5E8400FD6EDC /* AlamofireProvider.swift in Sources */,
+				7F8E5071287B39AE00FC33FC /* RealmTableViewCell.swift in Sources */,
 				7F0A3B95286B5C2100FD6EDC /* CurrentWeatherStruct.swift in Sources */,
 				7F0A3BA3286B64A500FD6EDC /* MapViewController.swift in Sources */,
 				7F0A3B61286B13A000FD6EDC /* AppDelegate.swift in Sources */,
+				7F8E5075287B3A4C00FC33FC /* RealmData.swift in Sources */,
+				7F8E506C287B38EB00FC33FC /* RealmViewController.swift in Sources */,
 				7F0A3B63286B13A000FD6EDC /* SceneDelegate.swift in Sources */,
 				7F0A3B91286B5BA900FD6EDC /* DailyWeatherStruct.swift in Sources */,
 				7F0A3B97286B5D7200FD6EDC /* Geocoding.swift in Sources */,
@@ -830,20 +865,38 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7F0A3BA5286C7F5700FD6EDC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		7F2B5A2C287B4660001BBA2D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.0;
+			};
+		};
+		7F2B5A31287B478B001BBA2D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				minimumVersion = 5.6.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7F0A3BA6286C7F5800FD6EDC /* Alamofire */ = {
+		7F2B5A2D287B4660001BBA2D /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7F0A3BA5286C7F5700FD6EDC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 7F2B5A2C287B4660001BBA2D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		7F2B5A2F287B4660001BBA2D /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F2B5A2C287B4660001BBA2D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		7F2B5A32287B478B001BBA2D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F2B5A31287B478B001BBA2D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

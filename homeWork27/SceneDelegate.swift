@@ -20,12 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         guard let firstVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WeatherStoryboard") as? WeatherViewController else {return}
         guard let secondVC = UIStoryboard(name: "MapStoryboard", bundle: nil).instantiateViewController(withIdentifier: "MapStoryboard") as? MapViewController else {return}
+        guard let thirdVC = UIStoryboard(name: "RealmStoryboard", bundle: nil).instantiateViewController(withIdentifier: "RealmStoryboard") as? RealmViewController else {return}
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([firstVC, secondVC], animated: true)
+        tabBarController.setViewControllers([firstVC, secondVC, thirdVC], animated: true)
         firstVC.tabBarItem.title = "Weather"
         firstVC.tabBarItem.image = UIImage(systemName: "cloud.sun.bolt")
         secondVC.tabBarItem.title = "Map"
         secondVC.tabBarItem.image = UIImage(systemName: "map")
+        thirdVC.tabBarItem.title = "RealmData"
+        thirdVC.tabBarItem.image = UIImage(systemName: "table")
         
         tabBarController.tabBar.backgroundColor = UIColor.orange
         window?.rootViewController = tabBarController

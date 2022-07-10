@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class WeatherViewController: UIViewController {
 
@@ -23,6 +24,7 @@ class WeatherViewController: UIViewController {
     
     var dailyWeatherArray: [DailyWeatherData] = []
     var hourlyWeatherArray: [HourlyWeatherData] = []
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +75,36 @@ class WeatherViewController: UIViewController {
                 guard let weatherIconId = value.current?.weather?.first?.icon else {return}
                 
                 DispatchQueue.main.async {
+                    
+                    guard let lonData = value.lon,
+                          let latData = value.lat
+                    else {return}
+                    let date = Date()
+                    let coordinatesRealmData = RealmData()
+                    coordinatesRealmData.lat = latData
+                    coordinatesRealmData.lon = lonData
+                    coordinatesRealmData.time = Int(date.timeIntervalSince1970)
+                    
+                    try! self.realm.write {
+                        self.realm.add(coordinatesRealmData)
+                    }
+                   
+                    guard let tempData = value.current?.temp,
+                          let feelsLikeData = value.current?.feelsLike,
+                          let descriptionData = value.current?.weather?.first?.description
+                    else {return}
+                    
+                    let weatherRealmData = RealmWeatherData()
+                    weatherRealmData.temp = tempData
+                    weatherRealmData.feelsLike = feelsLikeData
+                    weatherRealmData.descriptionWeather = descriptionData
+                    weatherRealmData.time = Int(date.timeIntervalSince1970)
+                    weatherRealmData.coordinate = coordinatesRealmData
+                    
+                    try! self.realm.write {
+                        self.realm.add(weatherRealmData)
+                    }
+                    
                     
                     if let hourly = value.hourly {
                         self.hourlyWeatherArray = hourly
@@ -143,10 +175,11 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let dailyCell = dailyTempTable.dequeueReusableCell(withIdentifier: DailyWeatherCell.key) as? DailyWeatherCell {
             
-            if let dailyWeatherDay = dailyWeatherArray[indexPath.row].weather?.first?.description,
+            if let dailyWeatherDay = dailyWeatherArray[indexPath.row].dt,
                let dailyWeatherMax = dailyWeatherArray[indexPath.row].temp?.max {
                 
-                dailyCell.dayLabel.text = "\(dailyWeatherDay)"
+                let decodedDay = dailyWeatherDay.timeDecoder(int: dailyWeatherDay, format: "dd MMM YYYY")
+                dailyCell.dayLabel.text = decodedDay
                 dailyCell.weatherLabel.text = "+\(Int(dailyWeatherMax))"
             }
             return dailyCell
@@ -156,7 +189,15 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-
+extension Int {
+    func timeDecoder(int: Int, format: String) -> String {
+        let date = NSDate(timeIntervalSince1970: TimeInterval(int))
+        let dayTimePeriodFormatter = DateFormatter()
+        dayTimePeriodFormatter.dateFormat = format
+        let dateString = dayTimePeriodFormatter.string(from: date as Date)
+        return dateString
+    }
+}
 
 
 
