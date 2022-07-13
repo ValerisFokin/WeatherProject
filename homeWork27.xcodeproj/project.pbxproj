@@ -29,6 +29,8 @@
 		7F2B5A2E287B4660001BBA2D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2B5A2D287B4660001BBA2D /* Realm */; };
 		7F2B5A30287B4660001BBA2D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2B5A2F287B4660001BBA2D /* RealmSwift */; };
 		7F2B5A33287B478B001BBA2D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2B5A32287B478B001BBA2D /* Alamofire */; };
+		7F2B5A35287C5ECD001BBA2D /* DateFormatter + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2B5A34287C5ECD001BBA2D /* DateFormatter + Extension.swift */; };
+		7F7299ED287EF457003155C5 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7299EC287EF457003155C5 /* Manager.swift */; };
 		7F8E506C287B38EB00FC33FC /* RealmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E506B287B38EB00FC33FC /* RealmViewController.swift */; };
 		7F8E506E287B393800FC33FC /* RealmStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8E506D287B393800FC33FC /* RealmStoryboard.storyboard */; };
 		7F8E5071287B39AE00FC33FC /* RealmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8E506F287B39AE00FC33FC /* RealmTableViewCell.swift */; };
@@ -82,6 +84,8 @@
 		7F0A3BB3286C88C400FD6EDC /* HourlyWeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyWeatherCell.xib; sourceTree = "<group>"; };
 		7F0A3BF428709C9E00FD6EDC /* MapStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryboard.storyboard; sourceTree = "<group>"; };
 		7F0A3BF628722E9800FD6EDC /* Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		7F2B5A34287C5ECD001BBA2D /* DateFormatter + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Extension.swift"; sourceTree = "<group>"; };
+		7F7299EC287EF457003155C5 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		7F8E506B287B38EB00FC33FC /* RealmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmViewController.swift; sourceTree = "<group>"; };
 		7F8E506D287B393800FC33FC /* RealmStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RealmStoryboard.storyboard; sourceTree = "<group>"; };
 		7F8E506F287B39AE00FC33FC /* RealmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				7F0A3B60286B13A000FD6EDC /* AppDelegate.swift */,
 				7F0A3B62286B13A000FD6EDC /* SceneDelegate.swift */,
 				7F8E5074287B3A4C00FC33FC /* RealmData.swift */,
+				7F7299EC287EF457003155C5 /* Manager.swift */,
+				7F2B5A34287C5ECD001BBA2D /* DateFormatter + Extension.swift */,
 				7F0A3B99286B5E4400FD6EDC /* Constants.swift */,
 				7F8E5073287B39B600FC33FC /* RealmWeatherCell */,
 				7F0A3BB6286C88CE00FD6EDC /* HourlyWeatherCollection */,
@@ -514,6 +520,7 @@
 				7F0A3BB4286C88C400FD6EDC /* HourlyWeatherCell.swift in Sources */,
 				7F0A3B9C286B5E8400FD6EDC /* AlamofireProvider.swift in Sources */,
 				7F8E5071287B39AE00FC33FC /* RealmTableViewCell.swift in Sources */,
+				7F2B5A35287C5ECD001BBA2D /* DateFormatter + Extension.swift in Sources */,
 				7F0A3B95286B5C2100FD6EDC /* CurrentWeatherStruct.swift in Sources */,
 				7F0A3BA3286B64A500FD6EDC /* MapViewController.swift in Sources */,
 				7F0A3B61286B13A000FD6EDC /* AppDelegate.swift in Sources */,
@@ -525,6 +532,7 @@
 				7F0A3B93286B5BC300FD6EDC /* HourlyWeatherStruct.swift in Sources */,
 				7F0A3BAF286C887300FD6EDC /* DailyWeatherCell.swift in Sources */,
 				7F0A3B9A286B5E4400FD6EDC /* Constants.swift in Sources */,
+				7F7299ED287EF457003155C5 /* Manager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

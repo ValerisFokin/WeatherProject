@@ -24,7 +24,7 @@ class WeatherViewController: UIViewController {
     
     var dailyWeatherArray: [DailyWeatherData] = []
     var hourlyWeatherArray: [HourlyWeatherData] = []
-    let realm = try! Realm()
+    private var manager: ManagerProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,7 @@ class WeatherViewController: UIViewController {
         hourlyTempCollection.delegate = self
         hourlyTempCollection.dataSource = self
         
+        manager = WeatherManager()
         
         dailyTempTable.register(UINib(nibName: "DailyWeatherCell", bundle: nil), forCellReuseIdentifier: DailyWeatherCell.key)
         hourlyTempCollection.register(UINib(nibName: "HourlyWeatherCell", bundle: nil), forCellWithReuseIdentifier: HourlyWeatherCell.key)
@@ -85,9 +86,7 @@ class WeatherViewController: UIViewController {
                     coordinatesRealmData.lon = lonData
                     coordinatesRealmData.time = Int(date.timeIntervalSince1970)
                     
-                    try! self.realm.write {
-                        self.realm.add(coordinatesRealmData)
-                    }
+                    self.manager.coordinates(coordinatesData: coordinatesRealmData)
                    
                     guard let tempData = value.current?.temp,
                           let feelsLikeData = value.current?.feelsLike,
@@ -101,9 +100,7 @@ class WeatherViewController: UIViewController {
                     weatherRealmData.time = Int(date.timeIntervalSince1970)
                     weatherRealmData.coordinate = coordinatesRealmData
                     
-                    try! self.realm.write {
-                        self.realm.add(weatherRealmData)
-                    }
+                    self.manager.weather(weatherData: weatherRealmData)
                     
                     
                     if let hourly = value.hourly {
@@ -189,15 +186,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension Int {
-    func timeDecoder(int: Int, format: String) -> String {
-        let date = NSDate(timeIntervalSince1970: TimeInterval(int))
-        let dayTimePeriodFormatter = DateFormatter()
-        dayTimePeriodFormatter.dateFormat = format
-        let dateString = dayTimePeriodFormatter.string(from: date as Date)
-        return dateString
-    }
-}
+
 
 
 
