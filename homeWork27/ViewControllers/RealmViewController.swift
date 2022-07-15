@@ -12,16 +12,16 @@ class RealmViewController: UIViewController {
 
     @IBOutlet weak var realmTableView: UITableView!
     
-    var realmForWeatherData: [RealmWeatherData] = []
-    let realm = try! Realm()
+    var realmForWeatherData: Results<RealmWeatherData>!
+    private var manager: WeatherManagerProtocol!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        manager = WeatherManager()
         realmTableView.delegate = self
         realmTableView.dataSource = self
-        realmForWeatherData = realm.objects(RealmWeatherData.self).sorted {$0.time > $1.time}
+        realmForWeatherData = manager.sortedData().sorted(byKeyPath: "time", ascending: false)
         realmTableView.register(UINib(nibName: "RealmTableViewCell", bundle: nil), forCellReuseIdentifier: RealmTableViewCell.key)
         realmTableView.reloadData()
     }
@@ -36,7 +36,7 @@ extension RealmViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let realmForTableViewCell = realmTableView.dequeueReusableCell(withIdentifier: RealmTableViewCell.key) as? RealmTableViewCell {
             
-            let decodedTime = realmForWeatherData[indexPath.row].time.timeDecoder(int: realmForWeatherData[indexPath.row].time, format: "HH:mm:ss dd MMM YYYY")
+            let decodedTime = realmForWeatherData[indexPath.row].time.timeDecoder(format: "HH:mm:ss dd MMM YYYY")
             realmForTableViewCell.tempLabel.text = "\(Int(realmForWeatherData[indexPath.row].temp))"
             realmForTableViewCell.feelsLikeLabel.text = "\(Int(realmForWeatherData[indexPath.row].feelsLike))"
             realmForTableViewCell.descriptionLabel.text = "\(realmForWeatherData[indexPath.row].descriptionWeather)"

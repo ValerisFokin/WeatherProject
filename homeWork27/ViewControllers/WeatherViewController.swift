@@ -24,7 +24,7 @@ class WeatherViewController: UIViewController {
     
     var dailyWeatherArray: [DailyWeatherData] = []
     var hourlyWeatherArray: [HourlyWeatherData] = []
-    private var manager: ManagerProtocol!
+    private var manager: WeatherManagerProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -175,7 +175,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
             if let dailyWeatherDay = dailyWeatherArray[indexPath.row].dt,
                let dailyWeatherMax = dailyWeatherArray[indexPath.row].temp?.max {
                 
-                let decodedDay = dailyWeatherDay.timeDecoder(int: dailyWeatherDay, format: "dd MMM YYYY")
+                let decodedDay = dailyWeatherDay.timeDecoder( format: "dd MMM YYYY")
                 dailyCell.dayLabel.text = decodedDay
                 dailyCell.weatherLabel.text = "+\(Int(dailyWeatherMax))"
             }

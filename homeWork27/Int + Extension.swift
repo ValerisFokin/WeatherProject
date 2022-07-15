@@ -8,11 +8,11 @@
 import Foundation
 
 extension Int {
-    func timeDecoder(int: Self, format: String) -> String {
-        let date = NSDate(timeIntervalSince1970: TimeInterval(int))
+    func timeDecoder(format: String) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(self))
         let dayTimePeriodFormatter = DateFormatter()
         dayTimePeriodFormatter.dateFormat = format
-        let dateString = dayTimePeriodFormatter.string(from: date as Date)
-        return dateString
+        return dayTimePeriodFormatter.string(from: date as Date)
+        
     }
 }

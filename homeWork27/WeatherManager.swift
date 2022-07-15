@@ -8,14 +8,18 @@
 import Foundation
 import RealmSwift
 
-protocol ManagerProtocol {
+protocol WeatherManagerProtocol {
+    
     func coordinates(coordinatesData: RealmData)
     func weather(weatherData: RealmWeatherData)
+    func sortedData() -> Results<RealmWeatherData>
 }
 
-class WeatherManager: ManagerProtocol {
+class WeatherManager: WeatherManagerProtocol {
     
     let realm = try! Realm()
+    
+    
     
     func coordinates(coordinatesData: RealmData) {
         try! realm.write {
@@ -28,6 +32,11 @@ class WeatherManager: ManagerProtocol {
             realm.add(weatherData)
         }
     }
+    
+    func sortedData() -> Results<RealmWeatherData> {
+        return realm.objects(RealmWeatherData.self)
+    }
+    
     
     
 }
